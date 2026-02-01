@@ -127,9 +127,12 @@ body {
 .game-btn { width: 25%; height: 28%; bottom: 8%; right: 25%; background-image: url("/game.webp"); }
 
 .title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
 }
 
 /* Navigation Buttons (The Buildings) */
@@ -420,7 +423,7 @@ body {
 
 .pizza-frame{
   position: relative;
-  width: min(520px, 45vw);
+  width: min(500px, 40vw);
   aspect-ratio: 1 / 1;
   border-radius: 26px;
 }
@@ -430,7 +433,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   pointer-events: none;
   transition: opacity 220ms ease, transform 220ms ease;
 }
@@ -443,4 +446,180 @@ body {
 .pizza-layer.show{
   opacity: 1;
   transform: scale(1);
+}
+.page-final{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #f5d79e; /* or use a bg image like kitchen */
+  display: flex;
+  flex-direction: column;
+}
+
+.final-ui{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 24px;
+}
+
+.final-pizza-frame{
+  position: relative;
+  width: min(520px, 45vw);
+  aspect-ratio: 1 / 1;
+  border-radius: 26px;
+}
+
+.final-pizza-layer{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.final-panel{
+  width: min(420px, 40vw);
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  padding: 18px;
+  border: 2px solid rgba(0,0,0,0.15);
+}
+
+.final-panel h3{
+  margin: 0 0 8px 0;
+  font-size: 22px;
+}
+
+.final-stats{
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.final-actions{
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn, .secondary-btn{
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 2px solid #000;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn{
+  background: linear-gradient(180deg, #fff3a0, #ffd84d);
+}
+
+
+/* Games page wrapper */
+.game-page{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Your .subtitle is absolutely positioned already; just make it readable here */
+.game-subtitle{
+  color: #111 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* A soft panel so text/cards don't get lost in the background */
+.game-panel{
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(520px, 60vw);
+  padding: 14px;
+
+  background: rgba(255,255,255,0.65);
+  border: 2px solid rgba(0,0,0,0.12);
+  border-radius: 18px;
+  backdrop-filter: blur(4px);
+}
+
+/* Grid layout */
+.game-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* Card buttons (same vibe as ingredient cards) */
+.game-card{
+  padding: 12px;
+  border-radius: 16px;
+  border: 2px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.92);
+
+  text-align: left;
+  cursor: pointer;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.game-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(0,0,0,0.20);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.14);
+}
+
+.game-card:active{
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.game-card-title{
+  font-weight: 900;
+  font-size: 14px;
+  color: #111;
+}
+
+.game-card-reward{
+  margin-top: 4px;
+  font-size: 12px;
+  color: #222;
+  font-weight: 700;
+}
+
+.game-card-locked{
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #7a2a2a;
+}
+
+/* Locked look */
+.game-card.locked{
+  opacity: 0.55;
+  filter: grayscale(0.4);
+  cursor: not-allowed;
+}
+
+.game-card.locked:hover{
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(0,0,0,0.10);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .game-panel{
+    width: min(520px, 88vw);
+    top: 20%;
+  }
+  .game-grid{
+    grid-template-columns: 1fr;
+  }
 }

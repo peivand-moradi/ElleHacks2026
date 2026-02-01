@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import GamesHub from "./pages/GamesHub";
 import Grocery from "./pages/Grocery";
 import Kitchen from "./pages/Kitchen";
+import Final from "./pages/Final";
 import TicTacToe from "./games/tictactoe/TicTacToe";
 import MemoryGame from "./games/MemoryGame/MemoryGame";
 import WhackACoin from "./games/WhackACoin/WhackACoin";
@@ -63,6 +64,7 @@ export default function App() {
                 {page === "games" && <GamesHub state={state} setPage={setPage} />}
                 {page === "grocery" && <Grocery state={state} setState={setState} setPage={setPage} />}
                 {page === "kitchen" && <Kitchen state={state} setPage={setPage} />}
+                {page === "final" && <Final state={state} setPage={setPage} reset={reset} />}
               </>
           )}
 
@@ -143,14 +145,6 @@ export default function App() {
           </div>
         </div>
 
-        {page === "final" && (
-            <div className="win-screen-overlay">
-              <h2>Pizza Complete! 🎉🍕</h2>
-              <p>Elle used credit responsibly and reached her goal.</p>
-              <p><strong>Credit Score:</strong> {state.creditScore}</p>
-              <button onClick={() => { setPage("home"); reset(); }}>Back to Home</button>
-            </div>
-        )}
 
         {payOpen && (
             <PayCreditModal
