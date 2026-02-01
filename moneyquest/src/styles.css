@@ -160,79 +160,61 @@ body {
 .kitchen-btn { width: 20%; height: 30%; top: 20%; right: 15%; background-image: url("/bistro.webp"); }
 .game-btn { width: 25%; height: 28%; bottom: 8%; right: 23%; background-image: url("/game.webp"); }
 
-/* ✨ GEMINI INNER VOICE BUBBLE ✨ */
+/* ✨ CLEAN MODERN INNER VOICE ✨ */
 .inner-voice-container {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     width: 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    z-index: 100;
-    pointer-events: none; /* Allows clicking through to buildings behind */
+    z-index: 2000;
+    pointer-events: none;
 }
 
 .bubble {
-    background: #fff;
-    border: 3px solid #ffcc00; /* WealthSimple Yellow */
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
     border-radius: 18px;
-    padding: 12px 18px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 15px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.05); /* Subtle border instead of yellow */
     font-size: 14px;
     line-height: 1.4;
-    color: #333;
-    margin-bottom: 10px;
-    position: relative;
+    color: #2c3e50;
+    margin-bottom: 12px;
     pointer-events: all;
-    animation: popIn 0.4s ease-out;
+    animation: slideUp 0.4s ease-out;
 }
 
-/* The little triangle at the bottom of the bubble */
+/* The Triangle Pointer */
 .bubble::after {
     content: '';
     position: absolute;
-    top: 2%;
-    left: 2%;
-    font-size: 25px;
-}
-/* ✨ GEMINI INNER VOICE BUBBLE ✨ */
-.inner-voice-container {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    z-index: 100;
-    pointer-events: none; /* Allows clicking through to buildings behind */
     bottom: -10px;
     right: 20px;
     border-width: 10px 10px 0;
     border-style: solid;
-    border-color: #ffcc00 transparent;
+    border-color: white transparent;
 }
 
 .avatar-circle {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     background: #333;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 28px;
     border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-@keyframes popIn {
-    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
-    100% { opacity: 1; transform: scale(1) translateY(0); }
-}
-@keyframes popIn {
-    0% { opacity: 0; transform: scale(0.8) translateY(20px); }
-    100% { opacity: 1; transform: scale(1) translateY(0); }
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 /* ======== */
 /* Grocery page background container */

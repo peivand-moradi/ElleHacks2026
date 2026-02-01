@@ -37,7 +37,7 @@ export default function WhackACoin({ reward, onFinish, onBack }) {
 
     const handleWhack = (index) => {
         if (index === activeHole) {
-            setScore(s => s + 10);
+            setScore(s => s + 4);
             setActiveHole(null); // Coin disappears immediately on hit
         }
     };

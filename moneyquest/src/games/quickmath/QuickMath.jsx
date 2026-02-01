@@ -67,7 +67,7 @@ export default function QuickMath({ onFinish, onBack }) {
                     <h2>Quick Math</h2>
                     <div className="math-stats">
                         <div className="math-stat-box">TIME: {timeLeft}s</div>
-                        <div className="math-stat-box">EARNED: {score * 5} 🪙</div>
+                        <div className="math-stat-box">EARNED: {score * 20} 🪙</div>
                     </div>
                 </div>
 
@@ -82,14 +82,14 @@ export default function QuickMath({ onFinish, onBack }) {
                             onChange={checkAnswer}
                             placeholder="Type answer..."
                         />
-                        <p className="math-hint">5 coins per correct answer!</p>
+                        <p className="math-hint">20 coins per correct answer!</p>
                     </div>
                 ) : (
                     <div className="math-results">
                         <h3>Time's Up!</h3>
                         <p>You solved {score} problems correctly.</p>
-                        <button className="collect-btn" onClick={() => onFinish(score * 5)}>
-                            Collect {score * 5} Coins
+                        <button className="collect-btn" onClick={() => onFinish(score * 20)}>
+                            Collect {score * 20} Coins
                         </button>
                     </div>
                 )}
