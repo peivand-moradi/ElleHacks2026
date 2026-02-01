@@ -1,7 +1,7 @@
 export default function Home({ setPage }) {
   return (
     <div className="page page-home">
-      <h2>Credit Crust 🍕</h2>
+      <h2 className="title">Credit Crust 🍕</h2>
       <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
         <button className="building game-btn" onClick={() => setPage("games")}></button>
         <button className="building grocery-btn" onClick={() => setPage("grocery")}></button>
